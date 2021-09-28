@@ -9,9 +9,7 @@ use Twig\Environment;
 
 class QuestionController extends AbstractController
 {
-    /**
-     * @Route("/", name="app_homepage")
-     */
+
     public function homepage(Environment $twigEnvironment)
     {
         /*
@@ -24,9 +22,7 @@ class QuestionController extends AbstractController
         return $this->render('question/homepage.html.twig');
     }
 
-    /**
-     * @Route("/questions/{slug}", name="app_question_show")
-     */
+
     public function show($slug)
     {
         $answers = [
@@ -35,8 +31,11 @@ class QuestionController extends AbstractController
             'Maybe... try saying the spell backwards?',
         ];
 
+        $questionText = 'I\'ve been turned into a cat, any thoughts on how to turn back? While I\'m **adorable**, I don\'t really care for cat food.';
+
         return $this->render('question/show.html.twig', [
             'question' => ucwords(str_replace('-', ' ', $slug)),
+            'questionText' => $questionText,
             'answers' => $answers,
         ]);
     }
