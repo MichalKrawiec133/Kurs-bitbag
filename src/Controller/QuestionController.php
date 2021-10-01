@@ -33,12 +33,8 @@ class QuestionController extends AbstractController
     }
 
 
-    public function show($slug, MarkdownHelper $markdownHelper, HubInterface $sentryHub)
+    public function show($slug, MarkdownHelper $markdownHelper)
     {
-
-        dump($sentryHub->getClient());
-
-        //throw new \Exception('Bad stuff happened!');
 
         if ($this->isDebug){
             $this->logger->info('We are in debug mode!');
