@@ -7,7 +7,16 @@ app_comment_vote:
   controller: App\Controller\CommentController::commentVote
   methods: POST
 
+app_new_new:
+  path: /questions/new
+  controller: App\Controller\QuestionController::new_new
+
 app_question_show:
   path: /questions/{slug}
   controller: App\Controller\QuestionController::show
+
+app_question_vote:
+  path: /questions/{slug}/vote
+  controller: App\Controller\QuestionController::questionVote
+  methods: POST
 
